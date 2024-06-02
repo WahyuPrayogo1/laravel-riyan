@@ -53,6 +53,14 @@
                     </table>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nama_konsumen">Nama Konsumen</label>
+                        <input type="text" class="form-control" id="nama_konsumen" placeholder="Masukkan Nama Konsumen">
+                    </div>
+                </div>
+            </div>
             <button class="btn btn-primary" onclick="checkout()">Checkout</button>
         </div>
     </div>
@@ -203,13 +211,18 @@
         }
 
         function checkout() {
-
-
+            var nama_konsumen = $('#nama_konsumen').val();
+            if (!nama_konsumen) {
+                Swal.fire('Failed!', 'Nama konsumen harus diisi.', 'error');
+                return;
+            }
             $.ajax({
                 type: "POST",
                 url: "{{ route('penjualan.store') }}",
                 data: {
-                    _token: '{{ csrf_token() }}'
+                    _token: '{{ csrf_token() }}',
+                    nama_konsumen: nama_konsumen
+
                 },
                 success: function(response) {
                     Swal.fire('Success!', response.success, 'success');

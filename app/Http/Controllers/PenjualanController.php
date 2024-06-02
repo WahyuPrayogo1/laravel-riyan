@@ -74,7 +74,7 @@ class PenjualanController extends Controller
 
                 // Pembuatan penjualan
                 Penjualan::create([
-                    'nama_konsumen' => 'wahyu',
+                    'nama_konsumen' => $request->nama_konsumen,
                     'no_faktur' => 'F' . now()->format('YmdHis'),
                     'tgl_faktur' => now(),
                     'barang_id' => $barang->id,
