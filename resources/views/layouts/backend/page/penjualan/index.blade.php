@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('layouts.backend.dashboard')
 @section('content')
     <div class="row justify-content-between mt-4 mb-3">
         <div class="col-md-12">

@@ -6,6 +6,9 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PenjualanController;
+use App\Models\Barang;
+use App\Models\Penjualan;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +26,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $terjual = Penjualan::all()->count();
+    $barang = Barang::all()->count();
+    return view('dashboard', compact('terjual', 'barang'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
