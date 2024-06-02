@@ -227,6 +227,7 @@
                 success: function(response) {
                     Swal.fire('Success!', response.success, 'success');
                     refreshKeranjangTable();
+                    $('#nama_konsumen').val('');
                     $('#table-barang').DataTable().ajax.reload(); // Refresh barang table to update stock
                 },
                 error: function(xhr) {
