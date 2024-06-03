@@ -6,12 +6,12 @@
             <div class="logo-topbar">
                 <!-- Logo light -->
                 <a href="#" class="logo-light">
-                    <h4 class="title text-white">Riyan Fadhilah</h4>
+                    <h4 class="title text-white">Mochamad Zhaldi Fahrezi</h4>
                 </a>
 
                 <!-- Logo Dark -->
                 <a href="#" class="logo-dark">
-                    <h4 class="title text-black">Riyan Fadhilah</h4>
+                    <h4 class="title text-black">Mochamad Zhaldi Fahrezi</h4>
                 </a>
             </div>
 
